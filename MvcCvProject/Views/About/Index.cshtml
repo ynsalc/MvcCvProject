@@ -1,0 +1,44 @@
+﻿@using MvcCvProject.Models.Entity
+@model List<About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card" style="margin-top:10px;">
+                    <div class="card-header">
+                        <h3 class="card-title"><b>Profili Düzenle</b></h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <form method="post">
+                            @foreach (var c in Model)
+                            {
+
+                                <label>Ad:</label>
+                                <input type="text" name="FirstName" class="form-control" value="@c.FirstName"/>
+                                <label>Soyad:</label>
+                                <input type="text" name="LastName" class="form-control" value="@c.LastName"/>
+                                <label>Mail:</label>
+                                <input type="text" name="Mail" class="form-control" value="@c.Mail"/>
+                                <label>Telefon:</label>
+                                <input type="text" name="PhoneNumber" class="form-control" value="@c.PhoneNumber"/>
+                                <label>Açıklama:</label>
+                                <textarea rows="5" class="form-control" name="Description">@c.Description</textarea>
+                                <label>Resim:</label>
+                                <input type="text" name="Picture" class="form-control" value="@c.Picture"/>
+                                <label>Adres:</label>
+                                <input type="text" name="Adress" class="form-control" value="@c.Adress"/>
+                            }
+                        <br />
+                        <button class="btn btn-info">Düzenle</button>
+                        </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

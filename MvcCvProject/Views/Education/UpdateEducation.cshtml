@@ -1,0 +1,22 @@
+﻿@model MvcCvProject.Models.Entity.Education
+@{
+    ViewBag.Title = "UpdateEducation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Eğitim Güncelleme</h2>
+<br />
+<form method="post">
+    @Html.Label("Eğitim Id")
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+    @Html.Label("Okul Adı")
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    @Html.Label("Alan Adı")
+    @Html.TextBoxFor(x => x.SubTitle1, new { @class = "form-control" })
+    @Html.Label("Bölüm Adı")
+    @Html.TextBoxFor(x => x.SubTitle2, new { @class = "form-control" })
+    @Html.Label("Genel Not Ortalaması")
+    @Html.TextBoxFor(x => x.GNO, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</form>

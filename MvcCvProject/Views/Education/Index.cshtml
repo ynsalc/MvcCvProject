@@ -1,0 +1,49 @@
+﻿@using MvcCvProject.Models.Entity
+@model List<Education>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card" style="margin-top:10px;">
+                    <div class="card-header">
+                        <h3 class="card-title"><b>Eğitimlerim Listesi</b></h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Id</th>
+                                <th>Okul</th>
+                                <th>Alan</th>
+                                <th>Bölüm</th>
+                                <th>Genel Not Ortalaması</th>
+                                <th>Sil</th>
+                                <th>Düzenle</th>
+                            </tr>
+                            @foreach (var x in Model)
+                            {
+                                <tr>
+                                    <td>@x.ID</td>
+                                    <td>@x.Title</td>
+                                    <td>@x.SubTitle1</td>
+                                    <td>@x.SubTitle2</td>
+                                    <td>@x.GNO</td>
+                                    <td><a href="/Education/DeleteEducation/@x.ID" class="btn btn-danger">Sil</a></td>
+                                    <td><a href="/Education/UpdateEducation/@x.ID" class="btn btn-success">Düzenle</a></td>
+                                </tr>
+                            }
+
+                        </table>
+                        <br />
+                        <a href="/Education/AddEducation" class="btn btn-primary">Eğitim Ekle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

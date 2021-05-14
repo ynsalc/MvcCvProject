@@ -1,0 +1,16 @@
+﻿@model MvcCvProject.Models.Entity.Certificate
+@{
+    ViewBag.Title = "AddCertificate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Sertifika Ekle</h2>
+<br />
+<form method="post">
+    @Html.Label("Sertifika Adı")
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    @Html.Label("Sertifika Tarihi")
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Ekle</button>
+</form>
